@@ -38,7 +38,8 @@ respuestas = [
     # 12 ¿Utiliza algún dispositivo o recibe ayuda para desplazarse?
     [11789, 143],
     # 13 ¿Utiliza alguna de las siguientes ayudas técnicas? (puede marcar más de una)
-    [11789, 80, 15, 21, 31, 3, 15, 53, 26],
+    # [11789, 80, 15, 21, 31, 3, 15, 53, 26],
+    [],
     # 14 Esta dificultad es:
     [19, 124],
     # 15 ¿Tiene dificultad para desplazarse dentro del plantel?
@@ -96,13 +97,15 @@ respuestas = [
     # 41 En el último año, ¿con qué frecuencia la condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de ocio?
     [7292, 3892, 380, 261, 107],
     # 42 ¿Su condición de salud mental influye para que deje de realizar las siguientes acciones como?: (Puede marcar más de una)
-    [6364, 1243, 1292, 1105, 782, 505, 421, 220],
+    # [6364, 1243, 1292, 1105, 782, 505, 421, 220],
+    [],
     # 43 ¿En los últimos 3 meses, con qué frecuencia sintió dolor?
     [4731, 4831, 1300, 771, 299],
     # 44 En los últimos 3 meses, ¿con qué frecuencia se ha sentido muy cansado/a o exhausto/a ?
     [2268, 4614, 1701, 2183, 1166],
-    # 45 ¿Qué tipo de apoyos pueden favorecer su desempeño académico? (Puede marcar más de una)
-    [1099, 1285, 1539, 1603, 1535, 1302, 1025, 800, 577, 404, 278, 165, 112, 77, 34, 32, 18, 11, 8, 5, 19, 4],
+    # # 45 ¿Qué tipo de apoyos pueden favorecer su desempeño académico? (Puede marcar más de una)
+    [],
+    # [1099, 1285, 1539, 1603, 1535, 1302, 1025, 800, 577, 404, 278, 165, 112, 77, 34, 32, 18, 11, 8, 5, 19, 4],
     # 46 ¿Usa tecnología de apoyo (lector de pantalla, transcriptor de audio a texto, app?
     [9553, 2379],
     # 47
