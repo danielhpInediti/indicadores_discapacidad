@@ -68,15 +68,15 @@ respuestas = [
     # 27 ¿Tiene usted dificultad para valerse por sí mismo, como vestirse por sí mismo?
     [11772, 122, 29, 9],
     # 28 Esta dificultad es:
-    [186, 165],
+    [165, 186],
     # 29 ¿Con qué frecuencia se siente preocupado/a?
-    [5463, 2133, 1608, 1567, 1161],
+    [1161, 5463, 1567, 2133, 1608],
     # 30 ¿Con qué frecuencia se siente nervioso/a?
-    [5070, 2379, 1830, 1713, 940],
+    [940, 5070, 1713, 2379, 1830],
     # 31 ¿Con qué frecuencia se siente ansioso/a?
-    [4442, 2248, 2030, 1693, 1519],
+    [1693, 4442, 1519, 2248, 2030],
     # 32 ¿Toma medicamentos para tratar sus estados de ánimo?
-    [10586, 584, 356, 347, 31, 28],
+    [347, 28, 31, 584, 10586, 356],
     # 33 Escriba los medicamentos que toma
     [],
     # 34  La toma de medicamentos es:
@@ -84,9 +84,9 @@ respuestas = [
     # 35 ¿Por qué no?
     [9524, 885],
     # 36 ¿Con qué frecuencia se siente deprimido/a?
-    [4861, 4330, 1177, 1065, 499],
+    [4330, 4861, 1177, 1065, 499],
     # 37 ¿Toma medicamentos para la depresión?
-    [10990, 464, 289, 159, 15, 15],
+    [159, 15, 15, 464, 10990, 289],
     # 38 Escriba los medicamentos que toma
     [],
     # 39 La toma de medicamentos es:
@@ -96,23 +96,23 @@ respuestas = [
     # 41 En el último año, ¿con qué frecuencia la condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de ocio?
     [7292, 3892, 380, 261, 107],
     # 42 ¿Su condición de salud mental influye para que deje de realizar las siguientes acciones como?: (Puede marcar más de una)
-    [6364, 3611, 3268, 2503, 1935, 1798, 3259, 487, 6364],
+    [6364, 1243, 1292, 1105, 782, 505, 421, 220],
     # 43 ¿En los últimos 3 meses, con qué frecuencia sintió dolor?
-    [4831, 4731, 1300, 771, 299],
+    [4731, 4831, 1300, 771, 299],
     # 44 En los últimos 3 meses, ¿con qué frecuencia se ha sentido muy cansado/a o exhausto/a ?
-    [4614, 2268, 2183, 1701, 1166],
+    [2268, 4614, 1701, 2183, 1166],
     # 45 ¿Qué tipo de apoyos pueden favorecer su desempeño académico? (Puede marcar más de una)
-    [1603, 1539, 1535, 1302, 1285, 1099, 1025, 800, 577, 404, 278, 165, 112, 77, 34, 32, 19, 18, 11, 8, 5, 4],
+    [1099, 1285, 1539, 1603, 1535, 1302, 1025, 800, 577, 404, 278, 165, 112, 77, 34, 32, 18, 11, 8, 5, 19, 4],
     # 46 ¿Usa tecnología de apoyo (lector de pantalla, transcriptor de audio a texto, app?
     [9553, 2379],
     # 47
     [],
     # 48 ¿Por qué no?
-    [6019, 3243, 153, 138],
+    [3243, 138, 6019, 153],
     # 49 ¿Ha sido diagnosticado con alguna discapacidad?
     [11139, 793],
     # 50 ¿Cuál?
-    [181, 162, 126, 91, 87, 68, 63, 15],
+    [162, 181, 126, 15, 87, 68, 63, 91],
     # 51 ¿De qué tipo de institución?
     [608, 185]
 ]
