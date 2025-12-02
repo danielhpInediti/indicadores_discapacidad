@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://talentocs.inediti.dev/logos/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://www.serviciospcd.unam.mx/img/UNAPDI500.svg">
     <title>Indicadores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -56,2226 +56,1313 @@
     <div class="container-fluid">
         <div class="page-content">
 
-            <div class="row mb-4">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="fa fa-user-o text-purple"></i></h2>
-                                    <h3 class="">744</h3>
-                                    <h6 class="card-subtitle">Empleados Activos</h6>
-                                </div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar"
-                                             style="width: 100%; height: 6px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="fa fa-male text-success"></i></h2>
-                                    <h3 class="">294</h3>
-                                    <h6 class="card-subtitle">Visitas Totales</h6>
-                                </div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar"
-                                             style="width: 100%; height: 6px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="fa fa-address-book-o text-purple"></i></h2>
-                                    <h3 class="">34</h3>
-                                    <h6 class="card-subtitle">Accesos en el día</h6>
-                                </div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar"
-                                             style="width: 100%; height: 6px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="fa fa-graduation-cap text-warning"></i></h2>
-                                    <h3 class="">18759</h3>
-                                    <h6 class="card-subtitle">Cursos Registrados</h6>
-                                </div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div id="num_cursos" class="progress-bar bg-warning" role="progressbar"
-                                             style="width: 100%; height: 6px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row">
 
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta1">¿Usa lentes?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta1"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta1'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Usa lentes?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta2">¿Tiene dificultad para ver aún usando
-                            lentes?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta2"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta2'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para ver aún usando lentes?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta3">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta3"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta3'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta4">¿Tiene dificultad para ver con claridad la cara de
-                            una persona que está al otro lado del aula aún usando lentes?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta4"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta4'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para ver con claridad la cara de una persona que está al otro lado del aula aún usando lentes?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta5">¿Tiene dificultad para ver con claridad el texto
-                            de un libro aún usando lentes?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta5"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta5'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para ver con claridad el texto de un libro aún usando lentes?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta6">¿Utiliza un implante coclear o aparato
-                            auditivo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta6"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta6'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Utiliza un implante coclear o aparato auditivo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta7">¿Tiene dificultad para oír aún usando implante
-                            coclear o aparato auditivo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta7"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta7'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para oír aún usando implante coclear o aparato auditivo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta8">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta8"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta8'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta9">¿Tiene dificultad para oír lo que se dice en una
-                            conversación con otra persona en un salón sin ruido aún usando implante coclear o aparato
-                            auditivo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta9"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta9'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón sin ruido aún usando implante coclear o aparato auditivo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta10">¿Tiene dificultad para oír lo que se dice en una
-                            conversación con otra persona en un salón con ruido aún usando implante coclear o aparato
-                            auditivo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta10"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta10'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón con ruido aún usando implante coclear o aparato auditivo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta11">¿Tiene dificultad para caminar o subir
-                            escalones?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta11"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta11'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para caminar o subir escalones?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta12">¿Utiliza algún dispositivo o recibe ayuda para
-                            desplazarse?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta12"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta12'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Utiliza algún dispositivo o recibe ayuda para desplazarse?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta13">¿Utiliza alguna de las siguientes ayudas
-                            técnicas? (puede marcar más de una)</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta13"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta13'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Utiliza alguna de las siguientes ayudas técnicas? (puede marcar más de una)'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta14">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta14"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta14'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta15">¿Tiene dificultad para desplazarse dentro del
-                            plantel?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta15"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta15'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para desplazarse dentro del plantel?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta16">¿Tiene usted dificultad para levantar su
-                            mochila?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta16"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta16'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene usted dificultad para levantar su mochila?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta17">¿Tiene usted dificultad para usar sus manos y
-                            dedos? Por ejemplo, al recoger objetos pequeños como un botón o un lápiz, o al abrir y
-                            cerrar recipientes o botellas.</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta17"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta17'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene usted dificultad para usar sus manos y dedos? Por ejemplo, al recoger objetos pequeños como un botón o un lápiz, o al abrir y cerrar recipientes o botellas.'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta18">¿Cuándo emplea su lenguaje habitual, tiene
-                            dificultad para comunicarse, por ejemplo, para entender a los demás o para que lo
-                            entiendan?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta18"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta18'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Cuándo emplea su lenguaje habitual, tiene dificultad para comunicarse, por ejemplo, para entender a los demás o para que lo entiendan?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta19">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta19"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta19'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta20">¿Utiliza usted Lengua de Señas?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta20"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta20'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Utiliza usted Lengua de Señas?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta21">¿Tiene dificultad para recordar?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta21"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta21'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para recordar?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta22">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta22"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta22'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta23">¿Tiene dificultad para concentrarse?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta23"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta23'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para concentrarse?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta24">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta24"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta24'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta25">¿Tiene dificultad para valerse por sí mismo, como
-                            lavarse el cuerpo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta25"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta25'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene dificultad para valerse por sí mismo, como lavarse el cuerpo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta26">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta26"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta26'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta27">¿Tiene usted dificultad para valerse por sí
-                            mismo, como vestirse por sí mismo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta27"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta27'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Tiene usted dificultad para valerse por sí mismo, como vestirse por sí mismo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta28">Esta dificultad es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta28"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta28'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Esta dificultad es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta29">¿Con qué frecuencia se siente
-                            preocupado/a?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta29"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta29'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Con qué frecuencia se siente preocupado/a?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta30">¿Con qué frecuencia se siente nervioso/a?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta30"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta30'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Con qué frecuencia se siente nervioso/a?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta31">¿Con qué frecuencia se siente ansioso/a?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta31"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta31'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Con qué frecuencia se siente ansioso/a?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta32">¿Toma medicamentos para tratar sus estados de
-                            ánimo?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta32"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta32'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Toma medicamentos para tratar sus estados de ánimo?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta33">Escriba los medicamentos que toma</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta33"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta33'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Escriba los medicamentos que toma'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta34">La toma de medicamentos es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta34"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta34'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'La toma de medicamentos es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta35">¿Por qué no?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta35"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta35'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Por qué no?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta36">¿Con qué frecuencia se siente
-                            deprimido/a?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta36"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta36'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Con qué frecuencia se siente deprimido/a?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta37">¿Toma medicamentos para la depresión?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta37"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta37'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Toma medicamentos para la depresión?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta38">Escriba los medicamentos que toma</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta38"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta38'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Escriba los medicamentos que toma'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta39">La toma de medicamentos es:</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta39"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta39'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'La toma de medicamentos es:'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta40">¿Por qué no?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta40"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta40'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Por qué no?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta41">En el último año, ¿con qué frecuencia la
-                            condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de
-                            ocio?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta41"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta41'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'En el último año, ¿con qué frecuencia la condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de ocio?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta42">¿Su condición de salud mental influye para que
-                            deje de realizar las siguientes acciones como?: (Puede marcar más de una)</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta42"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta42'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Su condición de salud mental influye para que deje de realizar las siguientes acciones como?: (Puede marcar más de una)'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta43">¿En los últimos 3 meses, con qué frecuencia
-                            sintió dolor?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta43"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta43'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿En los últimos 3 meses, con qué frecuencia sintió dolor?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta44">En los últimos 3 meses, ¿con qué frecuencia se ha
-                            sentido muy cansado/a o exhausto/a ?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta44"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta44'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'En los últimos 3 meses, ¿con qué frecuencia se ha sentido muy cansado/a o exhausto/a ?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta45">¿Qué tipo de apoyos pueden favorecer su desempeño
-                            académico? (Puede marcar más de una)</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta45"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta45'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Qué tipo de apoyos pueden favorecer su desempeño académico? (Puede marcar más de una)'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta46">¿Usa tecnología de apoyo (lector de pantalla,
-                            transcriptor de audio a texto, app?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta46"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta46'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Usa tecnología de apoyo (lector de pantalla, transcriptor de audio a texto, app?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta47">¿Cuál?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta47"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta47'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Cuál?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta48">¿Por qué no?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta48"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta48'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Por qué no?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta49">¿Ha sido diagnosticado con alguna
-                            discapacidad?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta49"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta49'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Ha sido diagnosticado con alguna discapacidad?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta50">¿Cuál?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta50"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta50'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿Cuál?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta51">¿De qué tipo de institución?</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta51"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta51'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: '¿De qué tipo de institución?'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta52">Institución pública</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta52"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta52'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Institución pública'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta53">Nombre de la Institución</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta53"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta53'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Nombre de la Institución'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body"><label for="pregunta54">Si así lo consideras, aquí puedes subir tu
-                            diagnóstico</label>
-
-                            <div class="chart-placeholder" style="height:350px" id="chart-pregunta54"></div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-
-
-                    // Initialize the echarts instance based on the prepared dom
-                    var myChart = echarts.init(document.getElementById('chart-pregunta54'));
-
-                    // Specify the configuration items and data for the chart
-                    var option = {
-                        title: {
-                            text: 'Si así lo consideras, aquí puedes subir tu diagnóstico'
-                        },
-                        tooltip: {},
-                        legend: {
-                            data: ["Q3 Sales"]
-                        },
-                        xAxis: {
-                            data: ["Sep", "Oct", "Nov", "Dec"]
-                        },
-                        yAxis: {},
-                        series: [
-                            {
-                                name: 'Q3 Sales',
-                                type: 'bar',
-                                data: [45, 62, 58, 70]
-                            }
-                        ]
-                    };
-
-                    // Display the chart using the configuration items and data just specified.
-                    myChart.setOption(option);
-                </script>
-
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Usa lentes?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta1"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta1'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Usa lentes?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [6863, 5069]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para ver aún usando lentes?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta2"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta2'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para ver aún usando lentes?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [3968, 2693, 185, 17]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta3"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta3'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [1320, 1637]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para ver con claridad la cara de una persona que está al otro lado del aula aún usando lentes?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta4"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta4'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para ver con claridad la cara de una persona que está al otro lado del aula aún usando lentes?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [5013, 1655, 166, 29]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para ver con claridad el texto de un libro aún usando lentes?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta5"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta5'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para ver con claridad el texto de un libro aún usando lentes?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [5560, 1220, 72, 11]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Utiliza un implante coclear o aparato auditivo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta6"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta6'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Utiliza un implante coclear o aparato auditivo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [57, 11875]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para oír aún usando implante coclear o aparato auditivo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta7"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta7'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para oír aún usando implante coclear o aparato auditivo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [10, 27, 18, 2]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta8"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta8'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [5, 42]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón sin ruido aún usando implante coclear o aparato auditivo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta9"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta9'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón sin ruido aún usando implante coclear o aparato auditivo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [14, 28, 11, 4]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón con ruido aún usando implante coclear o aparato auditivo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta10"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta10'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para oír lo que se dice en una conversación con otra persona en un salón con ruido aún usando implante coclear o aparato auditivo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [12, 16, 25, 4]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para caminar o subir escalones?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta11"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta11'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para caminar o subir escalones?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11485, 447]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Utiliza algún dispositivo o recibe ayuda para desplazarse?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta12"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta12'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Utiliza algún dispositivo o recibe ayuda para desplazarse?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11789, 143]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta14"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta14'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [19, 124]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para desplazarse dentro del plantel?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta15"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta15'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para desplazarse dentro del plantel?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [162, 216, 64, 5]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene usted dificultad para levantar su mochila?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta16"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta16'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene usted dificultad para levantar su mochila?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [262, 143, 34, 8]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene usted dificultad para usar sus manos y dedos? Por ejemplo, al recoger objetos pequeños como un botón o un lápiz, o al abrir y cerrar recipientes o botellas.</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta17"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta17'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene usted dificultad para usar sus manos y dedos? Por ejemplo, al recoger objetos pequeños como un botón o un lápiz, o al abrir y cerrar recipientes o botellas.'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [316, 88, 34, 9]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Cuándo emplea su lenguaje habitual, tiene dificultad para comunicarse, por ejemplo, para entender a los demás o para que lo entiendan?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta18"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta18'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Cuándo emplea su lenguaje habitual, tiene dificultad para comunicarse, por ejemplo, para entender a los demás o para que lo entiendan?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [10166, 1631, 125, 10]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta19"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta19'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [1518, 424]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Utiliza usted Lengua de Señas?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta20"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta20'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Utiliza usted Lengua de Señas?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11877, 55]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para recordar?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta21"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta21'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para recordar?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [6887, 4569, 461, 15]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta22"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta22'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [4351, 832]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para concentrarse?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta23"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta23'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para concentrarse?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [5493, 5532, 848, 59]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta24"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta24'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [5101, 1453]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene dificultad para valerse por sí mismo, como lavarse el cuerpo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta25"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta25'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene dificultad para valerse por sí mismo, como lavarse el cuerpo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11728, 161, 32, 11]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta26"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta26'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [191, 202]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Tiene usted dificultad para valerse por sí mismo, como vestirse por sí mismo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta27"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta27'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Tiene usted dificultad para valerse por sí mismo, como vestirse por sí mismo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-No tiene ninguna", "2-Tiene cierta dificultad", "3-Tiene mucha dificultad", "4-Le resulta imposible"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11772, 122, 29, 9]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>Esta dificultad es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta28"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta28'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'Esta dificultad es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [165, 186]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Con qué frecuencia se siente preocupado/a?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta29"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta29'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Con qué frecuencia se siente preocupado/a?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [1161, 5463, 1567, 2133, 1608]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Con qué frecuencia se siente nervioso/a?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta30"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta30'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Con qué frecuencia se siente nervioso/a?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [940, 5070, 1713, 2379, 1830]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Con qué frecuencia se siente ansioso/a?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta31"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta31'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Con qué frecuencia se siente ansioso/a?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [1693, 4442, 1519, 2248, 2030]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Toma medicamentos para tratar sus estados de ánimo?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta32"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta32'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Toma medicamentos para tratar sus estados de ánimo?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Algunas veces al a\u00f1o", "2-Cada mes", "3-Cada semana", "4-Todos los d\u00edas", "5-No", "6-Prefiero no contestar"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [347, 28, 31, 584, 10586, 356]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>La toma de medicamentos es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta34"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta34'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'La toma de medicamentos es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [787, 383]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Por qué no?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta35"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta35'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Por qué no?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Porque no requiero", "2-Porque no puedo acceder a ellos"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [9524, 885]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Con qué frecuencia se siente deprimido/a?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta36"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta36'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Con qué frecuencia se siente deprimido/a?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [4330, 4861, 1177, 1065, 499]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Toma medicamentos para la depresión?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta37"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta37'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Toma medicamentos para la depresión?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Algunas veces al a\u00f1o", "2-Cada mes", "3-Cada semana", "4-Todos los d\u00edas", "5-No", "6-Prefiero no contestar"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [159, 15, 15, 464, 10990, 289]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>La toma de medicamentos es:</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta39"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta39'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'La toma de medicamentos es:'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Temporal", "2-Permanente"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [541, 296]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Por qué no?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta40"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta40'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Por qué no?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Porque no requiero", "2-Porque no puedo acceder a ellos"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [9969, 839]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>En el último año, ¿con qué frecuencia la condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de ocio?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta41"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta41'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'En el último año, ¿con qué frecuencia la condición de salud le impidió ir a la escuela, tomar clases y/o realizar actividades de ocio?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [7292, 3892, 380, 261, 107]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿En los últimos 3 meses, con qué frecuencia sintió dolor?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta43"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta43'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿En los últimos 3 meses, con qué frecuencia sintió dolor?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [4731, 4831, 1300, 771, 299]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>En los últimos 3 meses, ¿con qué frecuencia se ha sentido muy cansado/a o exhausto/a ?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta44"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta44'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: 'En los últimos 3 meses, ¿con qué frecuencia se ha sentido muy cansado/a o exhausto/a ?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Nunca", "2-Algunas veces al a\u00f1o", "3-Cada mes", "4-Cada semana", "5-Todos los d\u00edas"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [2268, 4614, 1701, 2183, 1166]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Usa tecnología de apoyo (lector de pantalla, transcriptor de audio a texto, app?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta46"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta46'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Usa tecnología de apoyo (lector de pantalla, transcriptor de audio a texto, app?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [9553, 2379]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Por qué no?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta48"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta48'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Por qué no?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Porque no las conozco", "2-Porque no tengo acceso a dispositivos tecnol\u00f3gicos", "3-Porque no las necesito", "4-Por falta de recursos"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [3243, 138, 6019, 153]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Ha sido diagnosticado con alguna discapacidad?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta49"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta49'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Ha sido diagnosticado con alguna discapacidad?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["S\u00ed", "No"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [11139, 793]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿Cuál?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta50"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta50'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿Cuál?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-Visual", "2-Motriz", "3-Psicosocial", "4-Intelectual", "5-Auditiva", "6-Autismo", "7-M\u00faltiple (\u00bfcu\u00e1les?)", "8-Otra (especificar)"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [162, 181, 126, 15, 87, 68, 63, 91]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
+                <div class="col-12 col-md-6 col-lg-4 mb-4"> <div class="card h-100"> <div class="card-body"><label>¿De qué tipo de institución?</label>
+
+                    <div class="chart-placeholder" style="height:350px" id="chart-pregunta51"></div></div></div></div><script>
+
+
+                // Initialize the echarts instance based on the prepared dom
+                var myChart = echarts.init(document.getElementById('chart-pregunta51'));
+
+                // Specify the configuration items and data for the chart
+                var option = {
+                    title: {
+                        text: '¿De qué tipo de institución?'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["1-P\u00fablica", "2-Privada"]
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            data: [608, 185]
+                        }
+                    ]
+                };
+
+                // Display the chart using the configuration items and data just specified.
+                myChart.setOption(option);
+            </script>
             </div>
         </div>
     </div>
