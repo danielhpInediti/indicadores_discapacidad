@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SET - Análisis Profundo de Vulnerabilidad</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; }
+        .card { @apply bg-white rounded-xl shadow-sm border border-gray-100 p-5 transition-all duration-300 hover:shadow-md; }
+        .filter-group { @apply mb-4 border-b border-gray-100 pb-4; }
+        .filter-title { @apply font-semibold text-gray-700 mb-2 flex items-center gap-2 text-sm uppercase tracking-wide; }
+        .checkbox-wrapper { @apply flex items-center space-x-2 mb-2 cursor-pointer hover:bg-gray-50 p-1 rounded -ml-1 transition-colors; }
+        .checkbox-input { @apply rounded text-blue-600 focus:ring-blue-500 h-4 w-4 border-gray-300; }
+        .checkbox-label { @apply text-sm text-gray-600 select-none; }
+        
+        /* Scrollbar personalizada para el panel de filtros */
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="text-gray-800 h-screen flex flex-col overflow-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900 text-white p-3 shadow-lg z-50 flex-none">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-lg font-bold flex items-center gap-2">
+                <i data-lucide="activity" class="text-blue-400"></i>
+                SET: Análisis de Vulnerabilidad
+            </h1>
+            <div class="flex gap-2">
+                <span id="filter-count-badge" class="bg-blue-600 text-xs px-2 py-1 rounded-full hidden">0 filtros activos</span>
+                <button onclick="resetFilters()" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-gray-300">
+                    Limpiar Filtros
+                </button>
+                <button onclick="regenerateData()" class="text-xs bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded transition flex items-center gap-1">
+                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Nuevos Datos
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- Sidebar de Filtros (Scrollable) -->
+        <aside class="w-80 bg-white border-r border-gray-200 flex flex-col z-40 shadow-xl transform transition-transform duration-300 absolute md:relative h-full md:translate-x-0 -translate-x-full" id="filterPanel">
+            <div class="p-4 border-b bg-gray-50 flex justify-between items-center">
+                <h2 class="font-bold text-gray-800 flex items-center gap-2">
+                    <i data-lucide="filter" class="w-4 h-4"></i> Filtros de Población
+                </h2>
+                <button class="md:hidden text-gray-500" onclick="toggleFilters()">✕</button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto custom-scroll p-4" id="filtersContainer">
+                <!-- Filtros generados dinámicamente aquí -->
+            </div>
+            
+            <div class="p-4 border-t bg-gray-50 text-xs text-center text-gray-400">
+                Seleccione múltiples opciones para cruzar datos
+            </div>
+        </aside>
+
+        <!-- Contenido Principal (Scrollable) -->
+        <main class="flex-1 overflow-y-auto bg-gray-50/50 p-4 relative w-full">
+            
+            <!-- Botón flotante para abrir filtros en móvil -->
+            <button onclick="toggleFilters()" class="md:hidden fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg z-50">
+                <i data-lucide="filter"></i>
+            </button>
+
+            <!-- KPIs -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div class="card border-l-4 border-blue-500 py-3">
+                    <p class="text-gray-400 text-xs uppercase font-bold">Población Filtrada</p>
+                    <div class="flex items-end gap-2">
+                        <p class="text-3xl font-bold text-gray-800" id="kpi-total">0</p>
+                        <p class="text-sm text-gray-400 mb-1">/ <span id="kpi-universe">0</span></p>
+                    </div>
+                </div>
+                <div class="card border-l-4 border-indigo-500 py-3">
+                    <p class="text-gray-400 text-xs uppercase font-bold">Tasa Diagnóstico</p>
+                    <p class="text-3xl font-bold text-indigo-600" id="kpi-diagnosis">0%</p>
+                </div>
+                <div class="card border-l-4 border-orange-500 py-3">
+                    <p class="text-gray-400 text-xs uppercase font-bold">Solicitan Apoyo</p>
+                    <p class="text-3xl font-bold text-orange-600" id="kpi-support">0%</p>
+                </div>
+                <div class="card border-l-4 border-red-500 py-3">
+                    <p class="text-gray-400 text-xs uppercase font-bold">Riesgo Psicosocial</p>
+                    <p class="text-3xl font-bold text-red-600" id="kpi-risk">0%</p>
+                </div>
+            </div>
+
+            <!-- Fila 1: Radar y Salud -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="card flex flex-col">
+                    <h3 class="font-bold text-gray-700 mb-4 flex items-center gap-2">
+                        <i data-lucide="radar" class="w-4 h-4 text-blue-500"></i> Perfil de Vulnerabilidad Promedio
+                    </h3>
+                    <div class="flex-1 min-h-[300px] relative">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card flex flex-col">
+                    <h3 class="font-bold text-gray-700 mb-4 flex items-center gap-2">
+                        <i data-lucide="heart-pulse" class="w-4 h-4 text-red-500"></i> Indicadores de Salud y Ánimo
+                    </h3>
+                    <div class="flex-1 min-h-[300px] relative">
+                        <canvas id="psychoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 2: Dona y Barras -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="card">
+                    <h3 class="font-bold text-gray-700 mb-2 text-sm text-center">Apoyos Académicos Solicitados</h3>
+                    <div class="h-[200px] relative">
+                        <canvas id="supportChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card md:col-span-2">
+                    <h3 class="font-bold text-gray-700 mb-2 text-sm">Distribución de Diagnósticos en este Grupo</h3>
+                    <div class="h-[200px] relative">
+                        <canvas id="diagnosisChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla Detallada -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="bg-gray-50 px-6 py-4 border-b flex justify-between items-center">
+                    <h3 class="font-bold text-gray-700">Listado de Estudiantes (Muestra filtrada)</h3>
+                    <span class="text-xs text-gray-500">Mostrando máx. 20 registros</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3">ID</th>
+                                <th class="px-6 py-3">Diag.</th>
+                                <th class="px-6 py-3">Visual</th>
+                                <th class="px-6 py-3">Auditivo</th>
+                                <th class="px-6 py-3">Motriz</th>
+                                <th class="px-6 py-3">Psico</th>
+                                <th class="px-6 py-3">Apoyos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody">
+                            <!-- JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="h-10"></div> <!-- Spacer -->
+        </main>
+    </div>
+
+<script>
+    // --- ICONOS ---
+    lucide.createIcons();
+
+    // --- CONFIGURACIÓN DE FILTROS ---
+    // Definimos la estructura de preguntas para generar la UI de filtros dinámicamente
+    const FILTER_CONFIG = [
+        {
+            id: 'visual',
+            label: '1. Componente Visual',
+            icon: 'eye',
+            filters: [
+                { key: 'vis_lentes', label: 'Usa lentes' },
+                { key: 'vis_dif_lentes', label: 'Dif. ver aún con lentes' },
+                { key: 'vis_dif_lejos', label: 'Dif. ver caras (lejos)' },
+                { key: 'vis_dif_texto', label: 'Dif. ver texto (libros)' }
+            ]
+        },
+        {
+            id: 'auditivo',
+            label: '2. Componente Auditivo',
+            icon: 'ear',
+            filters: [
+                { key: 'aud_aparato', label: 'Usa aparato auditivo' },
+                { key: 'aud_dif_aparato', label: 'Dif. oír aún con aparato' },
+                { key: 'aud_dif_ruido', label: 'Dif. oír con ruido ambiente' }
+            ]
+        },
+        {
+            id: 'motriz',
+            label: '3. Componente Motriz',
+            icon: 'accessibility',
+            filters: [
+                { key: 'mot_dif_caminar', label: 'Dif. caminar/subir' },
+                { key: 'mot_usa_ayuda', label: 'Usa ayuda técnica (Silla, etc)' },
+                { key: 'mot_dif_manos', label: 'Dif. usar manos/dedos' },
+                { key: 'mot_dif_mochila', label: 'Dif. levantar mochila' }
+            ]
+        },
+        {
+            id: 'comunicacion',
+            label: '4. Comunicación',
+            icon: 'message-circle',
+            filters: [
+                { key: 'com_dif_entender', label: 'Dif. comunicarse/entender' },
+                { key: 'com_senas', label: 'Usa Lengua de Señas' }
+            ]
+        },
+        {
+            id: 'cognitivo',
+            label: '5. Cognitivo / Auto.',
+            icon: 'brain',
+            filters: [
+                { key: 'cog_memoria', label: 'Dif. para recordar' },
+                { key: 'cog_concentracion', label: 'Dif. concentrarse' },
+                { key: 'aut_lavarse', label: 'Dif. autocuidado (lavarse/vestirse)' }
+            ]
+        },
+        {
+            id: 'salud',
+            label: '6. Salud y Psicosocial',
+            icon: 'heart-pulse',
+            filters: [
+                { key: 'sal_ansiedad', label: 'Ansiedad Frecuente (>Semanal)' },
+                { key: 'sal_depresion', label: 'Depresión Frecuente (>Semanal)' },
+                { key: 'sal_dolor', label: 'Dolor Físico Frecuente' },
+                { key: 'sal_fatiga', label: 'Fatiga/Exhausto Frecuente' },
+                { key: 'sal_meds', label: 'Toma medicamentos ánimo' }
+            ]
+        },
+        {
+            id: 'apoyos',
+            label: '7. Apoyos y Diagnóstico',
+            icon: 'file-text',
+            filters: [
+                { key: 'dg_oficial', label: 'Tiene Diagnóstico Oficial' },
+                { key: 'ap_tecnologia', label: 'Usa tecnología de apoyo' }
+            ]
+        }
+    ];
+
+    // --- VARIABLES GLOBALES ---
+    let allStudents = [];
+    let charts = {};
+
+    // --- GENERADOR DE DATOS AVANZADO ---
+    function generateAdvancedData(count = 200) {
+        const students = [];
+        const diagnosesList = ["Visual", "Auditiva", "Motriz", "Intelectual", "Psicosocial", "Autismo", "Múltiple", "Ninguna"];
+        const supportsList = ["Tiempo extra", "Lector pantalla", "Grabación", "Intérprete Lemos", "Material Braille", "Ninguno"];
+
+        for (let i = 0; i < count; i++) {
+            // Perfil base aleatorio
+            const hasDiag = Math.random() > 0.8;
+            const diagType = hasDiag ? diagnosesList[Math.floor(Math.random() * (diagnosesList.length - 1))] : "Ninguna";
+            
+            // Simulación de respuestas correlacionadas al diagnóstico
+            // Si es 'Visual', alta prob de usar lentes y tener dificultad
+            const isVisual = diagType === "Visual" || Math.random() > 0.9;
+            const isAuditivo = diagType === "Auditiva" || Math.random() > 0.95;
+            const isMotriz = diagType === "Motriz" || Math.random() > 0.95;
+            const isPsico = diagType === "Psicosocial" || Math.random() > 0.85;
+
+            // Salud Mental (0: Nunca, 4: Todos los días)
+            // Si es Psico, valores más altos
+            const anxiety = isPsico ? 2 + Math.floor(Math.random()*3) : Math.floor(Math.random()*3); // Si psico, min 2 (cada mes)
+            const depression = isPsico ? Math.floor(Math.random()*5) : (Math.random() > 0.9 ? Math.floor(Math.random()*4) : 0);
+
+            let s = {
+                id: `STD-${1000+i}`,
+                diagnosis: diagType,
+                requestedSupport: Math.random() > 0.7 ? supportsList[Math.floor(Math.random()*(supportsList.length-1))] : "Ninguno",
+                
+                // 1. VISUAL
+                vis_lentes: isVisual || Math.random() > 0.6,
+                vis_dif_lentes: isVisual ? Math.random() > 0.3 : false, // Dif aun con lentes
+                vis_dif_lejos: isVisual ? Math.random() > 0.2 : Math.random() > 0.9,
+                vis_dif_texto: isVisual ? Math.random() > 0.2 : false,
+
+                // 2. AUDITIVO
+                aud_aparato: isAuditivo,
+                aud_dif_aparato: isAuditivo ? Math.random() > 0.4 : false,
+                aud_dif_ruido: isAuditivo ? true : Math.random() > 0.9,
+
+                // 3. MOTRIZ
+                mot_dif_caminar: isMotriz || Math.random() > 0.95,
+                mot_usa_ayuda: isMotriz ? Math.random() > 0.2 : false,
+                mot_dif_manos: isMotriz ? Math.random() > 0.5 : Math.random() > 0.98,
+                mot_dif_mochila: isMotriz ? Math.random() > 0.4 : false,
+
+                // 4. COMUNICACION
+                com_dif_entender: diagType === "Intelectual" || diagType === "Autismo" || isAuditivo ? Math.random() > 0.5 : false,
+                com_senas: isAuditivo && Math.random() > 0.5,
+
+                // 5. COGNITIVO
+                cog_memoria: diagType === "Intelectual" || Math.random() > 0.9,
+                cog_concentracion: diagType === "Intelectual" || diagType === "Psicosocial" || Math.random() > 0.8, // TDAH simulado
+                aut_lavarse: isMotriz && Math.random() > 0.8, // Severo
+
+                // 6. SALUD
+                sal_ansiedad_val: anxiety, // Guardamos el valor numérico para el gráfico
+                sal_ansiedad: anxiety >= 3, // Boolean para filtro (Frecuente)
+                sal_depresion_val: depression,
+                sal_depresion: depression >= 3,
+                sal_dolor_val: isMotriz ? Math.floor(Math.random()*5) : Math.floor(Math.random()*2),
+                sal_dolor: (isMotriz ? Math.floor(Math.random()*5) : Math.floor(Math.random()*2)) >= 3,
+                sal_fatiga: Math.random() > 0.85,
+                sal_meds: isPsico || Math.random() > 0.9,
+
+                // 7. APOYOS Y DIAG
+                dg_oficial: hasDiag,
+                ap_tecnologia: isVisual || isAuditivo ? Math.random() > 0.5 : false
+            };
+
+            // Calculamos scores numéricos para el gráfico de radar (0-10)
+            // Simplificación: sumamos true = 2.5 puntos
+            s.scores = {
+                visual: (s.vis_dif_lentes + s.vis_dif_lejos + s.vis_dif_texto + (s.vis_lentes?0.5:0)) * 3,
+                auditivo: (s.aud_dif_aparato + s.aud_dif_ruido + s.aud_aparato) * 3.3,
+                motriz: (s.mot_dif_caminar + s.mot_usa_ayuda + s.mot_dif_manos + s.mot_dif_mochila) * 2.5,
+                comunicacion: (s.com_dif_entender + s.com_senas) * 5,
+                cognitivo: (s.cog_memoria + s.cog_concentracion) * 5,
+                salud: (s.sal_ansiedad + s.sal_depresion + s.sal_dolor + s.sal_fatiga) * 2.5,
+                apoyos: (s.ap_tecnologia || s.requestedSupport !== "Ninguno") ? 8 : 1
+            };
+
+            students.push(s);
+        }
+        return students;
+    }
+
+    // --- RENDER DE FILTROS ---
+    function renderFilters() {
+        const container = document.getElementById('filtersContainer');
+        container.innerHTML = '';
+
+        FILTER_CONFIG.forEach(group => {
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'filter-group';
+            
+            // Título del grupo con icono
+            const title = document.createElement('div');
+            title.className = 'filter-title';
+            title.innerHTML = `<i data-lucide="${group.icon}" class="w-4 h-4 text-blue-500"></i> ${group.label}`;
+            groupDiv.appendChild(title);
+
+            // Checkboxes
+            group.filters.forEach(f => {
+                const label = document.createElement('label');
+                label.className = 'checkbox-wrapper';
+                label.innerHTML = `
+                    <input type="checkbox" class="checkbox-input" id="filter-${f.key}" onchange="updateDashboard()">
+                    <span class="checkbox-label">${f.label}</span>
+                `;
+                groupDiv.appendChild(label);
+            });
+
+            container.appendChild(groupDiv);
+        });
+        lucide.createIcons();
+    }
+
+    // --- LÓGICA DE FILTRADO ---
+    function getFilteredData() {
+        // Obtenemos todos los checkboxes marcados
+        const activeFilters = [];
+        FILTER_CONFIG.forEach(g => {
+            g.filters.forEach(f => {
+                const checkbox = document.getElementById(`filter-${f.key}`);
+                if (checkbox && checkbox.checked) {
+                    activeFilters.push(f.key);
+                }
+            });
+        });
+
+        // Actualizar UI de conteo
+        const badge = document.getElementById('filter-count-badge');
+        if (activeFilters.length > 0) {
+            badge.innerText = `${activeFilters.length} filtros activos`;
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+
+        // Filtrar datos (AND logic: debe cumplir TODOS los filtros marcados)
+        return allStudents.filter(student => {
+            return activeFilters.every(key => student[key] === true);
+        });
+    }
+
+    // --- ACTUALIZACIÓN DASHBOARD ---
+    function updateDashboard() {
+        const data = getFilteredData();
+        const totalUniverse = allStudents.length;
+
+        // 1. KPIs
+        document.getElementById('kpi-total').innerText = data.length;
+        document.getElementById('kpi-universe').innerText = totalUniverse;
+        
+        const diagRate = data.length ? (data.filter(d => d.dg_oficial).length / data.length * 100).toFixed(1) : 0;
+        document.getElementById('kpi-diagnosis').innerText = `${diagRate}%`;
+
+        const supportRate = data.length ? (data.filter(d => d.requestedSupport !== "Ninguno").length / data.length * 100).toFixed(1) : 0;
+        document.getElementById('kpi-support').innerText = `${supportRate}%`;
+
+        const riskRate = data.length ? (data.filter(d => d.sal_ansiedad || d.sal_depresion).length / data.length * 100).toFixed(1) : 0;
+        document.getElementById('kpi-risk').innerText = `${riskRate}%`;
+
+        // 2. Gráficos
+        updateRadar(data);
+        updatePsycho(data);
+        updateSupport(data);
+        updateDiagnosis(data);
+
+        // 3. Tabla
+        updateTable(data);
+    }
+
+    // --- CHART UPDATERS ---
+    function updateRadar(data) {
+        if (!data.length) {
+            charts.radar.data.datasets[0].data = [0,0,0,0,0,0,0];
+            charts.radar.update(); return;
+        }
+        const keys = ['visual', 'auditivo', 'motriz', 'comunicacion', 'cognitivo', 'salud', 'apoyos'];
+        const avgs = keys.map(k => {
+            const sum = data.reduce((acc, curr) => acc + curr.scores[k], 0);
+            return (sum / data.length).toFixed(2);
+        });
+        charts.radar.data.datasets[0].data = avgs;
+        charts.radar.update();
+    }
+
+    function updatePsycho(data) {
+        // Conteo de incidencias altas
+        const counts = [
+            data.filter(d => d.sal_ansiedad).length,
+            data.filter(d => d.sal_depresion).length,
+            data.filter(d => d.sal_dolor).length,
+            data.filter(d => d.sal_fatiga).length,
+            data.filter(d => d.cog_concentracion).length
+        ];
+        charts.psycho.data.datasets[0].data = counts;
+        charts.psycho.update();
+    }
+
+    function updateSupport(data) {
+        const counts = {};
+        data.forEach(d => {
+            if (d.requestedSupport !== "Ninguno") counts[d.requestedSupport] = (counts[d.requestedSupport] || 0) + 1;
+        });
+        charts.support.data.labels = Object.keys(counts);
+        charts.support.data.datasets[0].data = Object.values(counts);
+        charts.support.update();
+    }
+
+    function updateDiagnosis(data) {
+        const counts = {};
+        data.forEach(d => {
+            if (d.diagnosis !== "Ninguna") counts[d.diagnosis] = (counts[d.diagnosis] || 0) + 1;
+        });
+        charts.diagnosis.data.labels = Object.keys(counts);
+        charts.diagnosis.data.datasets[0].data = Object.values(counts);
+        charts.diagnosis.update();
+    }
+
+    function updateTable(data) {
+        const tbody = document.getElementById('dataTableBody');
+        tbody.innerHTML = '';
+        data.slice(0, 20).forEach(d => {
+            const tr = document.createElement('tr');
+            tr.className = 'bg-white border-b hover:bg-blue-50';
+            tr.innerHTML = `
+                <td class="px-6 py-4 font-medium">${d.id}</td>
+                <td class="px-6 py-4">${d.diagnosis}</td>
+                <td class="px-6 py-4">${d.scores.visual > 2 ? '<span class="text-red-500">Alta</span>' : 'Baja'}</td>
+                <td class="px-6 py-4">${d.scores.auditivo > 2 ? '<span class="text-red-500">Alta</span>' : 'Baja'}</td>
+                <td class="px-6 py-4">${d.scores.motriz > 2 ? '<span class="text-red-500">Alta</span>' : 'Baja'}</td>
+                <td class="px-6 py-4">${d.sal_ansiedad || d.sal_depresion ? '<span class="text-orange-600 font-bold">Riesgo</span>' : 'OK'}</td>
+                <td class="px-6 py-4 text-xs">${d.requestedSupport}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // --- INIT ---
+    function init() {
+        renderFilters();
+        
+        // Init Charts
+        const commonOptions = { responsive: true, maintainAspectRatio: false };
+        
+        charts.radar = new Chart(document.getElementById('radarChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Visual', 'Auditivo', 'Motriz', 'Comunicación', 'Cognitivo', 'Salud', 'Apoyos'],
+                datasets: [{ label: 'Vulnerabilidad', data: [], backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6', pointBackgroundColor: '#3b82f6' }]
+            },
+            options: { ...commonOptions, scales: { r: { min: 0, max: 10, ticks: { display: false } } } }
+        });
+
+        charts.psycho = new Chart(document.getElementById('psychoChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Ansiedad', 'Depresión', 'Dolor Físico', 'Fatiga Crónica', 'Dif. Concentración'],
+                datasets: [{ label: 'Casos Frecuentes', data: [], backgroundColor: ['#FCD34D', '#F87171', '#9CA3AF', '#60A5FA', '#818CF8'] }]
+            },
+            options: commonOptions
+        });
+
+        charts.support = new Chart(document.getElementById('supportChart'), {
+            type: 'doughnut',
+            data: { labels: [], datasets: [{ data: [], backgroundColor: ['#60A5FA', '#34D399', '#A78BFA', '#F472B6', '#FBBF24'] }] },
+            options: { ...commonOptions, plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } } }
+        });
+
+        charts.diagnosis = new Chart(document.getElementById('diagnosisChart'), {
+            type: 'bar',
+            indexAxis: 'y',
+            data: { labels: [], datasets: [{ label: 'Estudiantes', data: [], backgroundColor: '#6366F1' }] },
+            options: commonOptions
+        });
+
+        regenerateData();
+    }
+
+    function regenerateData() {
+        allStudents = generateAdvancedData(200);
+        updateDashboard();
+    }
+
+    function resetFilters() {
+        document.querySelectorAll('.checkbox-input').forEach(c => c.checked = false);
+        updateDashboard();
+    }
+
+    function toggleFilters() {
+        const panel = document.getElementById('filterPanel');
+        panel.classList.toggle('-translate-x-full');
+    }
+
+    window.onload = init;
+
+</script>
+</body>
+</html>
